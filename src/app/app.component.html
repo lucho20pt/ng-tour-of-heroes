@@ -1,12 +1,26 @@
 
-<!-- <router-outlet></router-outlet> -->
+
 
 <div class="container">
-    <div class="row">
-        <div class="col p-4">
-          <button class="btn btn-primary">
-            button
-          </button>
-        </div>
-    </div>
+
+    <header class="row">
+
+      <div class="col-12 py-2 text-center">
+        <h1>{{title}}</h1>
+      </div>
+
+      <div class="col-12 px-2 text-left">
+        <nav class="py-1 px-4">
+          <a routerLink="/">Home</a>
+          <span class="mx-2">|</span>
+          <a routerLink="/heroes">Heroes</a>
+        </nav>
+      </div>
+
+    </header>
+
+    <main class="py-4">
+      <router-outlet></router-outlet>
+    </main>
+
 </div>
