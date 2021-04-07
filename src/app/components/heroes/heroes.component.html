@@ -4,30 +4,11 @@
   </div>
 </section>
 
+
 <section class="row">
 
-  <!-- hero input -->
-  <div class="col-md-6 mx-auto"
-    *ngIf="selectedHero"
-  >
-
-    <div class="form-group">
-
-      <label class="mx-1" for="hero-name">
-        {{selectedHero.name}}
-      </label>
-
-      <input class="form-control mx-1" type="text" name="hero-name"
-        placeholder="hero..."
-        [(ngModel)]="selectedHero.name"
-      >
-
-    </div>
-
-  </div>
-
   <!-- hero list -->
-  <div class="heroes | col-md-7 mx-auto">
+  <div class="heroes | col-md-6 mx-auto">
 
     <p><strong>List of Heroes</strong></p>
 
@@ -46,6 +27,11 @@
       </dl>
     </li>
 
+  </div>
+
+  <!-- hero detail -->
+  <div class="col-md-6 mx-auto">
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
   </div>
 
 </section>
