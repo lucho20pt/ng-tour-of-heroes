@@ -5,7 +5,35 @@
 </section>
 
 <section class="row">
-  <div class="col-12">
-    <p>&bull; {{hero}}</p>
+
+  <!-- hero input -->
+  <div class="col-6">
+
+    <div class="form-group">
+
+      <label class="mx-1" for="hero_name">
+        {{hero.name}}
+      </label>
+
+      <input class="form-control mx-1" type="text" name="hero_name"
+        placeholder="hero..."
+        [(ngModel)]="hero.name"
+      >
+
+    </div>
+
   </div>
+
+  <!-- hero list -->
+  <div class="col-12">
+
+    <p><strong>List of Heroes</strong></p>
+
+    <dl class="d-flex">
+      <dt class="mx-1">{{hero.id}}</dt>
+      <dd class="mx-1">{{hero.name | uppercase}}</dd>
+    </dl>
+
+  </div>
+
 </section>
