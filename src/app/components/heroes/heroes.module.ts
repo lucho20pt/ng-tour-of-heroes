@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroService } from './hero.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +19,7 @@ import { HeroService } from './hero.service';
     HeroesRoutingModule
   ],
   providers: [
-    
+
   ]
 })
 export class HeroesModule { }
