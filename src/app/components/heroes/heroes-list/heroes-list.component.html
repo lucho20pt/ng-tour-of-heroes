@@ -16,7 +16,7 @@
       <li class="d-block my-2"
         [class.selected]="hero === selectedHero"
         *ngFor="let hero of heroes; let i=index"
-        (click)="onSelect(hero)">
+        routerLink="/heroes/detail/{{hero.id}}">
         <dl class="d-flex justify-content-start">
           <dt class="badge | d-flex px-3">
             <span class="align-self-center">{{hero.id}}</span>
@@ -34,7 +34,7 @@
 
   <div class="col-md-5 mx-auto">
     <!-- hero detail -->
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
     <!-- messages -->
     <app-messages></app-messages>
   </div>

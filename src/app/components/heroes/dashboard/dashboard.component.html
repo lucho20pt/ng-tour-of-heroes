@@ -12,9 +12,12 @@
     <p><strong>TOP Heroes</strong></p>
 
     <ul class="d-flex justify-content-around">
-      <li class="p-2"
-        *ngFor="let hero of heroes; let i=index">
-        <span>{{hero.name | uppercase}}</span>
+      <li *ngFor="let hero of heroes; let i=index">
+
+          <a class="p-2" routerLink="/heroes/detail/{{hero.id}}">
+            {{hero.name}}
+          </a>
+
       </li>
     </ul>
 

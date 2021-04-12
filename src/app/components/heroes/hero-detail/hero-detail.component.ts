@@ -1,22 +1,12 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
-  template: `
-    <div class="form-group" *ngIf="hero">
-
-      <label class="mx-1" for="hero-name">
-        {{hero.name}}
-      </label>
-
-      <input class="form-control mx-1" type="text" name="hero-name"
-        placeholder="hero..."
-        [(ngModel)]="hero.name"
-      >
-      
-    </div>
-  `,
+  templateUrl: './hero-detail.component.html',
   styles: [
   ]
 })
@@ -24,9 +14,28 @@ export class HeroDetailComponent implements OnInit {
 
   @Input() hero?: Hero;
 
-  constructor() { }
+  constructor(
+    private route : ActivatedRoute,
+    private heroService : HeroService,
+    private location : Location
+  ) { }
 
   ngOnInit(): void {
+    this.getHero();
+  }
+
+  getHero(): void {
+    // console.log(this.route.snapshot.params.id);
+    // console.log(this.route.snapshot.paramMap.get("id"));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.heroService.getHero(id)
+      .subscribe(
+        hero => this.hero = hero
+      );
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

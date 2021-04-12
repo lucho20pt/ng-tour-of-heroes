@@ -1,0 +1,37 @@
+<section class="row">
+  <div class="col-12 text-center">
+    <h2>{{title}} {{hero.name}}</h2>
+  </div>
+</section>
+
+<section class="row">
+
+  <!-- hero -->
+  <div class="heroes | col-md-7 mx-auto">
+
+    <div class="form-group" *ngIf="hero">
+
+      <label class="mx-1" for="hero-name">
+        name: {{hero.name}}
+      </label>
+
+      <input class="form-control mx-1" type="text" name="hero-name"
+        placeholder="hero..."
+        [(ngModel)]="hero.name"
+      >
+
+      <br>
+
+      <button (click)="goBack()" class="btn">go back</button>
+
+    </div>
+
+  </div>
+
+
+  <div class="col-md-5 mx-auto">
+    <!-- messages -->
+    <app-messages></app-messages>
+  </div>
+
+</section>
