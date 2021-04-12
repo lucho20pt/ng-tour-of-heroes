@@ -1,0 +1,30 @@
+/* DashboardComponent's private CSS styles */
+.heroes {
+  list-style-type: none;
+
+  li {
+    cursor: pointer;
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    background-color:#405061;
+    border-radius: 4px;
+
+    &:hover {
+      color: #2c3a41;
+      background-color: #e6e6e6;
+    }
+    &.selected {
+      background-color: black;
+      color: white;
+    }
+    &.selected:hover {
+      background-color: #505050;
+      color: white;
+    }
+    &.selected:active {
+      background-color: black;
+      color: white;
+    }
+  }
+}

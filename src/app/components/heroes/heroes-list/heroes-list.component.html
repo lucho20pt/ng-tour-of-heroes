@@ -8,29 +8,31 @@
 <section class="row">
 
   <!-- hero list -->
-  <div class="heroes | col-md-6 mx-auto">
+  <div class="heroes | col-md-7 mx-auto">
 
     <p><strong>List of Heroes</strong></p>
 
-    <li class="d-block my-2"
-      [class.selected]="hero === selectedHero"
-      *ngFor="let hero of heroes; let i=index"
-      (click)="onSelect(hero)">
-      <dl class="d-flex justify-content-start">
-        <dt class="badge | d-flex px-3">
-          <span class="align-self-center">{{hero.id}}</span>
-        </dt>
-        <dd class="d-flex w-100 justify-content-between p-1">
-          <span class="w-75">{{hero.name | uppercase}}</span>
-          <span class="w-25 btn btn-info">{{hero.universe}}</span>
-        </dd>
-      </dl>
-    </li>
+    <ul>
+      <li class="d-block my-2"
+        [class.selected]="hero === selectedHero"
+        *ngFor="let hero of heroes; let i=index"
+        (click)="onSelect(hero)">
+        <dl class="d-flex justify-content-start">
+          <dt class="badge | d-flex px-3">
+            <span class="align-self-center">{{hero.id}}</span>
+          </dt>
+          <dd class="d-flex w-100 justify-content-between p-1">
+            <span class="w-75">{{hero.name | uppercase}}</span>
+            <span class="w-25 btn btn-info">{{hero.universe}}</span>
+          </dd>
+        </dl>
+      </li>
+    </ul>
 
   </div>
 
 
-  <div class="col-md-6 mx-auto">
+  <div class="col-md-5 mx-auto">
     <!-- hero detail -->
     <app-hero-detail [hero]="selectedHero"></app-hero-detail>
     <!-- messages -->
